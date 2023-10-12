@@ -2,7 +2,7 @@ import React from 'react';
 import Navbar from './Navbar';
 
 const Layout = () => (
-  <div className="layout">
+  <div>
     <Navbar />
   </div>
 );

@@ -1,4 +1,3 @@
-import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { BsMailbox2 } from 'react-icons/bs'
 import lvicon from '../assets/Luis-Valera.png';

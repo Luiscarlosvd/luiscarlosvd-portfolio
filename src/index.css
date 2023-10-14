@@ -6,3 +6,18 @@
 .text-shadow {
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
 }
+
+.photo-bg-headline {
+    margin-top: 2em;
+    border-radius: 50%;
+}
+
+.photo-headline {
+    border-radius: 50%;
+    width: 99%;
+    max-width: 23em;
+    margin-top: 0.5em;
+    box-shadow: 14px 14px 15px -1px rgba(108,109,108,0.62);
+-webkit-box-shadow: 14px 14px 15px -1px rgba(108,109,108,0.62);
+-moz-box-shadow: 14px 14px 15px -1px rgba(108,109,108,0.62);
+}

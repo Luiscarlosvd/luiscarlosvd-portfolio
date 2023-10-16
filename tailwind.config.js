@@ -18,6 +18,7 @@ export default {
         'zomp': '#74AA94',
         'pigment-green': '#479A4B',
         'mantis': '#65B869',
+        'project-card': '#C2CED6',
       },
     },
   },

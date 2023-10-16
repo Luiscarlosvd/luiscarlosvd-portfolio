@@ -1,4 +1,5 @@
 import ProjectCard from "./projects/ProjectCard"
+import { useState } from "react"
 
 const projects = [
   {
@@ -28,9 +29,50 @@ const projects = [
     see_live: 'rentals-app-egry.onrender.com',
     see_source: 'https://github.com/Luiscarlosvd/futuristic-transportation/tree/main',
   },
+  {
+    id: 3,
+    title: 'Luxury Speedsters 🚗',
+    photo: 'https://lh3.google.com/u/1/d/13708KiJ8_1pn5IkeTJ2SZbp3TrtJA7l7=w2000-h3556-iv1',
+    description: `Experience the future of automotive luxury with our 
+                  "Luxury Speedsters" app. This app enables users to browse 
+                  a diverse catalog of cutting-edge vehicles, explore detailed 
+                  car profiles, and effortlessly create reservations for their dream cars. 
+                  Keep track of all your reservations in one place 
+                  .`,
+    technologies: 'Ruby On Rails, React and Redux, Tailwind CSS, PostgreSQL',
+    see_live: 'rentals-app-egry.onrender.com',
+    see_source: 'https://github.com/Luiscarlosvd/futuristic-transportation/tree/main',
+  },
+  {
+    id: 4,
+    title: 'Luxury Speedsters 🚘',
+    photo: 'https://lh3.google.com/u/1/d/1JYkre19MOxkk69W-_VaFNjiNyOVkcLFt=w1868-h903-iv1',
+    description: `Experience the future of automotive luxury with our 
+                  "Luxury Speedsters" app. This app enables users to browse 
+                  a diverse catalog of cutting-edge vehicles, explore detailed 
+                  car profiles, and effortlessly create reservations for their dream cars. 
+                  Keep track of all your reservations in one place.`,
+    technologies: 'Ruby On Rails, React and Redux, Tailwind CSS, PostgreSQL',
+    see_live: 'rentals-app-egry.onrender.com',
+    see_source: 'https://github.com/Luiscarlosvd/futuristic-transportation/tree/main',
+  },
 ]
 
 const ProjectList = () => {
+  const [count, setCount] = useState(3);
+
+  const incrementCount = () => {
+    if (count + 3 >= projects.length) {
+      setCount(projects.length)
+    } else {
+      setCount(count + 3);
+    }
+  };
+
+  const decrementCount = () => {
+    setCount(3)
+  };
+
   return (
     <section className="my-8">
       <div className="flex justify-between w-11/12 m-auto items-center">
@@ -39,7 +81,7 @@ const ProjectList = () => {
         <div className="w-full h-2 shadow-md rounded-e-lg bg-mantis" />
       </div>
       <div className="w-11/12 m-auto mt-12 flex flex-col justify-center gap-4">
-        {projects.map(project => (
+        {projects.slice(0, count).map(project => (
           <ProjectCard
             key={project.id}
             id={project.id}
@@ -52,6 +94,10 @@ const ProjectList = () => {
           />
         ))}
       </div>
+      <p>Contador: {count}</p>
+      { count === projects.length && <button onClick={decrementCount}>Mostrar menos</button>}
+      { count < projects.length && <button onClick={incrementCount}>Mostrar mas</button>}
+      
     </section>
   )
 }

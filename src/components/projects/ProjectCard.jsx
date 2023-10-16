@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import { BsGithub } from 'react-icons/bs'
 import { GrDeploy } from 'react-icons/gr'
+import PropTypes from 'prop-types';
 
 const ProjectCard = ({ id, title, description, technologies, linkSource, linkLive = '#', photo }) => {
   return (
@@ -36,5 +37,15 @@ const ProjectCard = ({ id, title, description, technologies, linkSource, linkLiv
     </div>
   )
 }
+
+ProjectCard.propTypes = {
+    id: PropTypes.number.isRequired,
+    title: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
+    technologies: PropTypes.arrayOf(PropTypes.string).isRequired,
+    linkSource: PropTypes.string.isRequired,
+    linkLive: PropTypes.string.isRequired,
+    photo: PropTypes.string.isRequired,
+};
 
 export default ProjectCard

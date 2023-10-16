@@ -3,7 +3,7 @@ import ProjectCard from "./projects/ProjectCard"
 const projects = [
   {
     id: 1,
-    title: 'Luxury Speedsters',
+    title: 'Luxury Speedsters 🚘',
     photo: '#',
     description: `Experience the future of automotive luxury with our 
                   "Luxury Speedsters" app. This app enables users to browse 
@@ -16,7 +16,7 @@ const projects = [
   },
   {
     id: 2,
-    title: 'Luxury Speedsters',
+    title: 'Luxury Speedsters 🚗',
     photo: '#',
     description: `Experience the future of automotive luxury with our 
                   "Luxury Speedsters" app. This app enables users to browse 
@@ -39,9 +39,13 @@ const ProjectList = () => {
       </div>
       <div className="w-11/12 m-auto mt-12 flex flex-col gap-4">
         {projects.map(project => (
-          <ProjectCard 
+          <ProjectCard
+            key={project.id}
             title={project.title}
             description={project.description}
+            technologies={project.technologies.split(", ")}
+            linkSource={project.see_source}
+            linkLive={project.see_live}
           />
         ))}
       </div>

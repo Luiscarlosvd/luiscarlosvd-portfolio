@@ -16,6 +16,8 @@ export default {
         'dark-purple': '#1C0B19',
         'pistachio': '#9FD586',
         'zomp': '#74AA94',
+        'pigment-green': '#479A4B',
+        'mantis': '#65B869',
       },
     },
   },

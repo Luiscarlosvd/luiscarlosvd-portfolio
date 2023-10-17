@@ -38,10 +38,10 @@ const ProjectList = () => {
           />
         ))}
       </div>
-      <p>Contador: {count}</p>
-      { count === projects.length && <button onClick={decrementCount}>Mostrar menos</button>}
-      { count < projects.length && <button onClick={incrementCount}>Mostrar mas</button>}
-      
+      <div className="text-center mt-6">
+        { count === projects.length && <button className='bg-mantis bg-opacity-90 p-2 rounded-md text-midnight-green border-b-4 border-midnight-green' onClick={decrementCount}>Show less</button>}
+        { count < projects.length && <button className='bg-mantis bg-opacity-90 p-2 rounded-md text-midnight-green border-b-4 border-midnight-green' onClick={incrementCount}>Show more</button>}
+      </div>
     </section>
   )
 }
